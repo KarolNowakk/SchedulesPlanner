@@ -1,0 +1,799 @@
+body, html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#mainContainer {
+  width: 100%;
+  min-height: 100%;
+  color: #fff;
+  font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-weight: normal;
+  background-color: #efefef;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#navBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+  border-bottom: 4px solid #97d3ed;
+}
+
+@media (max-width: 700px) {
+  #navBar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
+}
+
+.cardLayout {
+  background-color: white;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+  padding: 0 0.5em;
+}
+
+.navItem {
+  text-decoration: none;
+  padding: 20px 0 20px 0;
+  letter-spacing: 2px;
+  color: #aaa;
+}
+
+.navItem:hover {
+  cursor: pointer;
+  color: #555;
+}
+
+@media (max-width: 700px) {
+  .navItem {
+    padding: 10px 0 10px 0;
+  }
+}
+
+.infoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 100%;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.infoContainer .leftSide {
+  padding: 20px;
+  background-color: white;
+  width: 100%;
+  margin-right: 20px;
+  margin-left: 20px;
+  border: 3px solid #97d3ed;
+}
+
+.infoContainer .leftSide .selectMonthContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 400px;
+  height: 40px;
+}
+
+.infoContainer .leftSide .selectMonthContainer #selectMonth {
+  font-size: 20px;
+  border: none;
+  border-bottom: 3px solid #97d3ed;
+  text-align: center;
+}
+
+.infoContainer .leftSide .selectMonthContainer #year {
+  font-size: 20px;
+  max-width: 100px;
+  border: none;
+  border-bottom: 3px solid #97d3ed;
+  text-align: center;
+}
+
+.infoContainer .leftSide .selectMonthContainer button {
+  font-size: 20px;
+  min-width: 100px;
+  border: none;
+  background-color: #97d3ed;
+  color: white;
+  opacity: 0.5;
+}
+
+.infoContainer .leftSide .selectMonthContainer button:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.infoContainer .leftSide #calendar {
+  height: 100%;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.infoContainer .leftSide #calendar .week {
+  border: 10px solid #97d3ed;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 60px;
+}
+
+.infoContainer .leftSide #calendar .week .weekDays, .infoContainer .leftSide #calendar .week .weekDates, .infoContainer .leftSide #calendar .week .workerRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #666;
+  font-size: 15px;
+  font-weight: 10;
+  padding: 0;
+  margin: 0;
+}
+
+.infoContainer .leftSide #calendar .week .weekDays div, .infoContainer .leftSide #calendar .week .weekDates div, .infoContainer .leftSide #calendar .week .workerRow div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #97d3ed;
+  padding: 10px 20px 10px 20px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.infoContainer .leftSide #calendar .week .weekDays div span, .infoContainer .leftSide #calendar .week .weekDates div span, .infoContainer .leftSide #calendar .week .workerRow div span {
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+.infoContainer .leftSide #calendar .week .weekDays div input, .infoContainer .leftSide #calendar .week .weekDates div input, .infoContainer .leftSide #calendar .week .workerRow div input {
+  color: #888;
+  border: none;
+}
+
+.infoContainer .leftSide #calendar .week .weekDays div .buttons, .infoContainer .leftSide #calendar .week .weekDates div .buttons, .infoContainer .leftSide #calendar .week .workerRow div .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  height: 25px;
+  border: none;
+}
+
+.infoContainer .leftSide #calendar .week .weekDays div .buttons .delete, .infoContainer .leftSide #calendar .week .weekDates div .buttons .delete, .infoContainer .leftSide #calendar .week .workerRow div .buttons .delete, .infoContainer .leftSide #calendar .week .weekDays div .buttons .update, .infoContainer .leftSide #calendar .week .weekDates div .buttons .update, .infoContainer .leftSide #calendar .week .workerRow div .buttons .update {
+  border: none;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  color: #bf0a30;
+  font-size: 12px;
+  text-align: center;
+}
+
+.infoContainer .leftSide #calendar .week .weekDays div .buttons .delete:hover, .infoContainer .leftSide #calendar .week .weekDates div .buttons .delete:hover, .infoContainer .leftSide #calendar .week .workerRow div .buttons .delete:hover, .infoContainer .leftSide #calendar .week .weekDays div .buttons .update:hover, .infoContainer .leftSide #calendar .week .weekDates div .buttons .update:hover, .infoContainer .leftSide #calendar .week .workerRow div .buttons .update:hover {
+  color: #97d3ed;
+  cursor: pointer;
+}
+
+.infoContainer .leftSide #calendar .week .weekDays div .buttons .update, .infoContainer .leftSide #calendar .week .weekDates div .buttons .update, .infoContainer .leftSide #calendar .week .workerRow div .buttons .update {
+  color: #00a86a;
+}
+
+.infoContainer .leftSide #calendar .week .weekDays div .add, .infoContainer .leftSide #calendar .week .weekDates div .add, .infoContainer .leftSide #calendar .week .workerRow div .add {
+  border: none;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+
+.infoContainer .leftSide #calendar .week .weekDays div .add:hover, .infoContainer .leftSide #calendar .week .weekDates div .add:hover, .infoContainer .leftSide #calendar .week .workerRow div .add:hover {
+  color: #97d3ed;
+  cursor: pointer;
+}
+
+.infoContainer .leftSide #calendar .week .weekDates div {
+  border-bottom: 5px solid #97d3ed;
+}
+
+.infoContainer .leftSide #calendar .week .workerRow div {
+  height: 100%;
+  width: 100%;
+  height: 64px;
+  border-bottom: 1px solid #97d3ed;
+}
+
+.infoContainer .leftSide #calendar .week .addNewWorker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 25px;
+  border: 1px solid #97d3ed;
+  height: 50px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.infoContainer .leftSide #calendar .week .addNewWorker span {
+  color: #888;
+  padding-top: 10px;
+  margin: 0;
+}
+
+.infoContainer .leftSide #calendar .week .addNewWorker span:hover {
+  color: #97d3ed;
+  cursor: pointer;
+}
+
+.infoContainer .leftSide #calendar .week .addNewWorker div {
+  border: none;
+  max-width: 200px;
+  padding-left: 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.infoContainer .leftSide #calendar .week .addNewWorker div input {
+  border: none;
+  border-bottom: 2px solid #97d3ed;
+  color: #888;
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+.infoContainer .leftSide #calendar .week .addNewWorker div .searchResults {
+  max-width: 200px;
+  border: 2px solid #97d3ed;
+  padding: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0;
+  display: none;
+}
+
+.infoContainer .leftSide #calendar .week .addNewWorker div .searchResults .result {
+  border-bottom: 1px solid #bbb;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.infoContainer .leftSide #calendar .week .addNewWorker div .searchResults .result div {
+  padding: 0;
+  margin: 0;
+}
+
+.infoContainer .leftSide #calendar .week .addNewWorker div .searchResults .result div span {
+  padding: 0;
+  font-size: 20px;
+}
+
+.infoContainer .leftSide #calendar .week .addNewWorker div .searchResults .result:hover span {
+  color: #97d3ed;
+}
+
+#workerInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  padding-top: 15px;
+  border: 4px solid #97d3ed;
+  background-color: white;
+  min-width: 200px;
+  margin-right: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+#workerInfo .singleWorkerInfo, #workerInfo .singleWorkerInfoActive {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 4px;
+  width: 95%;
+  margin-bottom: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 20px;
+}
+
+#workerInfo .singleWorkerInfo .infoLine, #workerInfo .singleWorkerInfoActive .infoLine {
+  color: #aaa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2px 10px;
+}
+
+#workerInfo .singleWorkerInfo .name, #workerInfo .singleWorkerInfoActive .name {
+  padding-bottom: 5px;
+  color: #888;
+  font-weight: bold;
+  text-align: center;
+}
+
+#workerInfo .singleWorkerInfoActive {
+  border: 2px solid #97d3ed;
+}
+
+#scheduleGeneratorContainer {
+  font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-weight: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 100px;
+}
+
+#allSettings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 720px;
+  background-color: white;
+  border: 4px solid #97d3ed;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+#allSettings input {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #666;
+  max-width: 200px;
+  border: none;
+  border-bottom: 2px solid #97d3ed;
+}
+
+#allSettings button {
+  background-color: #97d3ed;
+  margin: 10px 0;
+  max-width: 300px;
+  min-height: 50px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding: 3px 30px;
+  opacity: 0.5;
+}
+
+#allSettings button:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+#allSettings h1 {
+  font-size: 30px;
+  color: #666;
+}
+
+#allSettings #selectMonth {
+  font-size: 25px;
+  color: #666;
+  border: none;
+  border-bottom: 2px solid #97d3ed;
+}
+
+#allSettings #selectMonth option {
+  font-size: 17px;
+  color: #666;
+}
+
+#allSettings #weekDaysWorkingHours {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 15px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#allSettings #weekDaysWorkingHours .oneDayLabel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 70px;
+}
+
+#allSettings #weekDaysWorkingHours .oneDayLabel label {
+  color: #888;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+#allSettings #weekDaysWorkingHours .oneDayLabel input {
+  font-size: 13px;
+}
+
+#dateSelector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.singleWorkerSettings, .singleWorkerSettingsAdded {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-radius: 5px;
+  border: 2px solid #97d3ed;
+  margin: 20px 0px 20px 0px;
+}
+
+.singleWorkerSettings label, .singleWorkerSettingsAdded label {
+  color: #666;
+  letter-spacing: 1px;
+}
+
+.singleWorkerSettings #singleWorkerLabel, .singleWorkerSettingsAdded #singleWorkerLabel, .singleWorkerSettingsAdded #singleWorkerLabelAdded {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  height: 60px;
+}
+
+.singleWorkerSettingsAdded {
+  border-radius: 5px;
+  border: 2px solid #eee;
+  max-height: 60px;
+  padding: 0;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.singleWorkerSettingsAdded #singleWorkerLabelAdded {
+  padding: 10px 0;
+  margin: 0;
+}
+
+.singleWorkerSettingsAdded #singleWorkerLabelAdded span {
+  color: #666;
+  letter-spacing: 1px;
+}
+
+.searchResults {
+  border: 2px solid #97d3ed;
+  position: relative;
+  background-color: white;
+  display: none;
+}
+
+.searchResults .result {
+  padding: 10px 5px 10px 5px;
+  border-bottom: 1px solid #ddd;
+  min-height: 20px;
+}
+
+.searchResults .result:hover span {
+  cursor: pointer;
+  color: #444;
+  letter-spacing: 1px;
+}
+
+.searchResults .result span {
+  color: #666;
+  letter-spacing: 1px;
+}
+
+#singleWorkerScheduleContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+  margin-top: 5vh;
+}
+
+@media (max-width: 700px) {
+  #singleWorkerScheduleContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+#singleWorkerScheduleContainer #oneMonthCalendar {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin: 0 2vw 0 2vw;
+  border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+  #singleWorkerScheduleContainer #oneMonthCalendar {
+    margin-bottom: 2vh;
+  }
+}
+
+#singleWorkerScheduleContainer #oneMonthCalendar #selectMonth, #singleWorkerScheduleContainer #oneMonthCalendar #year {
+  color: #888888;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 1vh 0 0.5vh 4vh;
+  border: none;
+  width: 120px;
+}
+
+#singleWorkerScheduleContainer #oneMonthCalendar #showMonth {
+  background-color: #97d3ed;
+  border: none;
+  color: white;
+  height: 25px;
+  font-size: 18px;
+  opacity: 0.5;
+}
+
+#singleWorkerScheduleContainer #oneMonthCalendar #showMonth:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+#singleWorkerScheduleContainer #oneMonthCalendar #daysInCalendar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.5vw;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#singleWorkerScheduleContainer #oneMonthCalendar #daysInCalendar .weekDayShortcut {
+  min-width: 5.8vw;
+  min-height: 3vw;
+}
+
+@media (max-width: 700px) {
+  #singleWorkerScheduleContainer #oneMonthCalendar #daysInCalendar .weekDayShortcut {
+    min-width: 12vw;
+    min-height: 12vw;
+  }
+}
+
+#singleWorkerScheduleContainer #oneMonthCalendar #daysInCalendar .weekDayShortcut:hover {
+  background-color: white;
+  color: #888;
+  cursor: auto;
+}
+
+#singleWorkerScheduleContainer #oneMonthCalendar #daysInCalendar span {
+  color: #888888;
+  min-width: 5.8vw;
+  min-height: 5.8vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin: 2px;
+  border-radius: 200px;
+}
+
+@media (max-width: 700px) {
+  #singleWorkerScheduleContainer #oneMonthCalendar #daysInCalendar span {
+    min-width: 12vw;
+    min-height: 12vw;
+  }
+}
+
+#singleWorkerScheduleContainer #oneMonthCalendar #daysInCalendar span:hover {
+  cursor: pointer;
+  background-color: #97d3ed;
+  color: white;
+}
+
+#singleWorkerScheduleContainer #oneMonthCalendar #daysInCalendar .emptyDay:hover {
+  background-color: white;
+  color: #888888;
+  cursor: auto;
+}
+
+#singleWorkerScheduleContainer #oneMonthCalendar #daysInCalendar .working {
+  background-color: #97d3ed;
+  opacity: 0.5;
+  border-radius: 200px;
+  color: #fff;
+}
+
+#singleWorkerScheduleContainer #oneMonthCalendar #daysInCalendar .working:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+#singleWorkerScheduleContainer #selectedDaySchedule {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  min-height: 1vh;
+  width: 100%;
+  border-radius: 10px;
+  margin: 0 2vw 0 2vw;
+}
+
+#singleWorkerScheduleContainer #selectedDaySchedule #month {
+  color: #888888;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 3vh 0 3vh 0;
+  letter-spacing: 2px;
+}
+
+#singleWorkerScheduleContainer #selectedDaySchedule #workerShift {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#singleWorkerScheduleContainer #selectedDaySchedule #workerShift span {
+  color: #888;
+  margin: 1vh 1vw 1vh 1vw;
+  letter-spacing: 2px;
+  padding: 0 5px 0 5px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,135 @@
+body, html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  background-color: #fff;
+  background-image: url(../images/photos/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+  justify-items: center;
+}
+
+#container .message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.9);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.9);
+  width: 320px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+#container .message span {
+  color: red;
+}
+
+.registerFrame {
+  width: 320px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: white;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.9);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.9);
+}
+
+.registerForm * {
+  color: #fff;
+  font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-weight: normal;
+}
+
+.registerForm {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  grid-row-gap: 1em;
+  justify-items: center;
+}
+
+.registerForm h1 {
+  color: #333;
+}
+
+.registerForm h3 {
+  color: #ccc;
+  font-size: 2vh;
+}
+
+.registerForm h2 {
+  color: #333;
+  font-size: 2.2vh;
+}
+
+.registerForm h2:hover {
+  cursor: pointer;
+}
+
+.registerForm.login {
+  -ms-grid-rows: (0.5fr)[5];
+      grid-template-rows: repeat(5, 0.5fr);
+}
+
+.registerForm.register {
+  -ms-grid-rows: (0.4fr)[8];
+      grid-template-rows: repeat(8, 0.4fr);
+  display: -ms-grid;
+  display: grid;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 90%;
+  font-size: 2vh;
+  letter-spacing: 1px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  color: #333;
+  text-align: center;
+}
+
+button[type="submit"] {
+  width: 90%;
+  background-color: #97d3ed;
+  border: 0;
+  font-size: 3vh;
+  letter-spacing: 4px;
+  color: #fff;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=register.css.map */

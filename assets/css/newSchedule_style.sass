@@ -1,0 +1,111 @@
+$bianca_color: #97d3ed
+//-----------NEW SCHEDULE STYLING PAGE--------------
+#scheduleGeneratorContainer
+	font-family: "Helvetica Neue","Helvetica","Arial",sans-serif
+	font-weight: normal
+	display: flex
+	justify-content: center
+
+
+
+#allSettings
+	display: flex
+	flex-direction: column
+	justify-content: center
+	max-width: 720px
+	background-color: white
+	border: 4px solid $bianca_color
+	padding: 10px
+	margin-top: 20px
+
+	input
+		font-size: 18px
+		margin: 10px 0
+		color: #666
+		max-width: 200px
+		border: none
+		border-bottom: 2px solid $bianca_color
+
+	button
+		background-color: $bianca_color
+		margin: 10px 0
+		max-width: 300px
+		min-height: 50px
+		border: none
+		color: white
+		border-radius: 5px
+		font-size: 20px
+		letter-spacing: 1px
+		padding: 3px 30px
+		&:hover
+			cursor: pointer
+	
+	h1
+		font-size: 30px
+		color: #666
+	#selectMonth
+		font-size: 25px
+		color: #666
+		border: none
+		border-bottom: 2px solid $bianca_color
+		option
+			font-size: 17px
+			color: #666
+
+#dateSelector
+	display: flex
+	flex-direction: row
+	justify-content: space-around
+
+.singleWorkerSettings
+	display: flex
+	flex-direction: row
+	border-radius: 5px
+	border: 2px solid $bianca_color
+	margin: 20px 0px 20px 0px
+	
+	label
+		color: #666
+		letter-spacing: 1px
+
+	#singleWorkerLabel
+		display: flex
+		flex-direction: column
+		margin: 10px 10px 10px 10px
+		padding: 10px 10px 10px 10px
+		height: 60px
+
+.singleWorkerSettingsAdded
+	@extend .singleWorkerSettings
+	border-radius: 5px
+	border: 2px solid #eee
+	max-height: 60px
+	padding: 0
+	justify-content: space-around
+	#singleWorkerLabelAdded
+		@extend #singleWorkerLabel
+		padding: 10px 0
+		margin: 0
+		span
+			color: #666
+			letter-spacing: 1px
+
+
+.searchResults
+	border: 2px solid $bianca_color
+	position: relative
+	background-color: white
+	display: none
+
+	.result
+		padding: 10px 5px 10px 5px
+		border-bottom: 1px solid #ddd
+		min-height: 20px
+		&:hover
+			span
+				cursor: pointer
+				color: #444
+				letter-spacing: 1px
+		span
+			color: #666
+			letter-spacing: 1px

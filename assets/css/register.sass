@@ -1,0 +1,94 @@
+$bianca_color: #97d3ed
+
+body,html
+    padding: 0
+    margin: 0
+    width: 100%
+    height: 100%
+
+#container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: 100%
+    background-color: #fff
+    background-image: url(../images/photos/bg.jpg)
+    background-position: center
+    background-size: cover
+    opacity: 0.7
+    justify-items: center
+    .message
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        background-color: white
+        border-radius: 8px
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.9)
+        width: 320px
+        height: 50px
+        margin-bottom: 20px
+        span
+            color: red
+
+	
+.registerFrame
+    width: 320px
+    //margin-top: 13vh
+    height: fit-content
+    background-color: white
+    border-radius: 8px
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.9)
+
+
+.registerForm *
+    color: #fff
+    font-family: "Helvetica Neue","Helvetica","Arial",sans-serif
+    font-weight: normal
+    
+   
+.registerForm
+    display: grid
+    grid-template-columns: 100%
+    grid-row-gap: 1em
+    justify-items: center
+    
+    h1
+        color: #333
+    h3
+        color: #ccc
+        font-size: 2vh
+    h2
+        color: #333
+        font-size: 2.2vh
+        &:hover
+            cursor: pointer
+
+.registerForm.login
+    grid-template-rows: repeat(5,0.5fr)
+.registerForm.register
+    grid-template-rows: repeat(8,0.4fr)
+    display: grid
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+    width: 90%
+    font-size: 2vh
+    letter-spacing: 1px
+    border: 0
+    border-bottom: 1px solid #ccc
+    color: #333
+    text-align: center
+
+
+button[type="submit"]
+    width: 90%
+    background-color: $bianca_color
+    border: 0
+    font-size: 3vh
+    letter-spacing: 4px
+    color: #fff
+    border-radius: 10px
+
