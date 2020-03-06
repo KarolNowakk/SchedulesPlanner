@@ -2,7 +2,7 @@
 	require_once("includes/config.php");
 	require_once("includes/handlers/login_handler.php");
 	if(!isset($_SESSION['logedIn'])){
-		header("Location: nope.php");
+		header("Location: register.php");
 		exit();	
 	}
 
