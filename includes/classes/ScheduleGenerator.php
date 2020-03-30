@@ -14,16 +14,17 @@
 	private $weekDaysWorkingHours;
 	private $reqWorkersOnShift;
 	
-	public function __construct($con,$date,$wdWorkHours,$reqWorkersOnShift){
-		$this->con = $con;
-		$this->date = $date;
-		$this->errors = [];
-		$this->dateDate = strtotime($date);
-		$this->weekDaysWorkingHours = $wdWorkHours;
-		$this->reqWorkersOnShift = $reqWorkersOnShift;
+	public function __construct($con,$date,$wdWorkHours,$reqWorkersOnShift)
+        {
+            $this->con = $con;
+            $this->date = $date;
+            $this->errors = [];
+            $this->dateDate = strtotime($date);
+            $this->weekDaysWorkingHours = $wdWorkHours;
+            $this->reqWorkersOnShift = $reqWorkersOnShift;
 
-		$this->year = (int)date('y',$this->dateDate);
-		$this->month = (int)date('n',$this->dateDate);
+            $this->year = (int)date('y',$this->dateDate);
+            $this->month = (int)date('n',$this->dateDate);
 	}
 
 	private function setMonthId(){
